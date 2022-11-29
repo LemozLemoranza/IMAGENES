@@ -1,0 +1,27 @@
+<div class="col-md-12">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>TÍTULO</th>
+                <th>DESCRIPCIÓN</th>
+                <th>OPERACIONES</th>
+                <th>IMAGEN</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each photos}}
+            <tr>
+                <td>{{title}}</td>
+                <td>{{desciption}}</td>
+                <td>
+                    <a href="{{imageURL}}" target="_blank" class="btn btn-primary">VER</a>
+                    <a href="/images/delete/{{_id}}" class="btn btn-danger">BORRAR</a>
+                </td>
+                <td>
+                    <img src="{{imageURL}}" alt="" class="image_admin">
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
