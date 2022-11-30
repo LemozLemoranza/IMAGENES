@@ -34,10 +34,15 @@ const Upload = async (req, res) => {
 };
 
 const Delete = async (req, res) => {
-  const { photo_id } = req.params;
-  const photo = await Photo.findByIdAndDelete(photo_id);
-  await cloudinary.uploader.destroy(photo.public_id);
-  res.redirect("/gallery");
+  try{
+    const { photo_id } = req.params;
+    const photo = await Photo.findByIdAndDelete(photo_id);
+    await cloudinary.uploader.destroy(photo.public_id);
+    res.redirect("/gallery");
+  }catch{
+    res.redirect("/gallery");
+
+  }
 };
 
 module.exports = {

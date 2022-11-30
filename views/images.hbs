@@ -1,18 +1,23 @@
 {{>nav-login}}
 
+<nav class="navbar navbar-light bg-light">
+  <span class="navbar-brand mb-0 h1"><strong>{{userTK}}</strong></span>
+</nav>
+
+
 <div class="container p-4">
   <div class="row">
     <div class="card-columns">
 
       {{#each photos}}
-        <div class="card">
-          <img src="{{imageURL}}" alt="" class="card-img-top" />
+        <div class="card ">
+          <img src="{{imageURL}}" alt="" class="card-img-top img-custom" />
 
           <div class="card-body">
 
             <h5 class="card-title">{{title}}</h5>
             <p class="card-text">{{description}}</p>
-            <a href="{{imageURL}}" class="btn btn-primary"> VER </a>
+            <a href="{{imageURL}}" target="_blank" class="btn btn-primary"> VER </a>
           </div>
         </div>
 
