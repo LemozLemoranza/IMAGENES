@@ -1,3 +1,5 @@
+{{>nav-login}}
+
 <div class="col-md-12">
     <table class="table">
         <thead>
@@ -12,12 +14,12 @@
             {{#each photos}}
             <tr>
                 <td>{{title}}</td>
-                <td>{{desciption}}</td>
+                <td>{{description}}</td>
                 <td>
                     <a href="{{imageURL}}" target="_blank" class="btn btn-primary">VER</a>
                     <a href="/images/delete/{{_id}}" class="btn btn-danger">BORRAR</a>
                 </td>
-                <td>
+                <td class="image-container">
                     <img src="{{imageURL}}" alt="" class="image_admin">
                 </td>
             </tr>

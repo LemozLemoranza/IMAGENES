@@ -1,29 +1,58 @@
+{{>nav-login}}
+{{#each validaciones}}
+
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <p>{{msg}}</p>
+
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+{{/each}}
+
 <div class="row">
-    <div class="col-md-12">
-        <div class="card">
-            <div class="card-body">
-                <form action="/images/add" method="POST" enctype="multipart/form-data">
-                    <div class="form-group">
-                        <input type="text" name="title" class="form-control" placeholder="TÍTULO">
-                    </div>
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-body">
+        <form action="/images/add" method="POST" enctype="multipart/form-data">
+          <div class="form-group">
+            <input
+              type="text"
+              name="title"
+              class="form-control"
+              placeholder="TÍTULO"
+              value="{{valores.title}}"
+            />
+          </div>
 
-                    <div class="form-group">
-                        <textarea name="description" class="form-control" placeholder="DESCRIPCIÓN"></textarea>
-                    </div>
+          <div class="form-group">
+            <textarea
+              name="description"
+              class="form-control"
+              placeholder="DESCRIPCIÓN"
+            >{{valores.description}}</textarea>
+          </div>
 
-                    <div class="input-group mb-3">
-                        <div class="custom-file">
-                            <input type="file" name="image" class="custom-file-input" id="inputGroupFile01">
-                            <label for="inputGroupFile01" class="custom-file-label">SELECCIONAR ARCHIVO</label>
-                        </div>
-                    </div>
-                    <button class="btn btn-primary">SUBIR</button>
-
-                </form>
+          <div class="input-group mb-3">
+            <div class="custom-file">
+              <input
+                type="file"
+                name="image"
+                class="custom-file-input"
+                id="inputGroupFile01"
+              />
+              <label
+                for="inputGroupFile01"
+                class="custom-file-label"
+              >SELECCIONAR ARCHIVO</label>
             </div>
-        </div>
-    </div>
+          </div>
+          <button class="btn btn-primary">SUBIR</button>
 
-    
+        </form>
+      </div>
+    </div>
+  </div>
 
 </div>

@@ -1,17 +1,19 @@
-const Photo = require("../models/Photo")
+const Photo = require("../models/Photo");
 
-const GeneralImages = async( req, res ) => {
-   const photos = await Photo.find().lean();
-   res.render('images',{photos})
-}
+const GeneralImages = async (req, res) => {
+  const photos = await Photo.find().lean().sort({ date: "desc" });
+  res.render("images", { photos });
+};
 
+const AdminImages = async (req, res) => {
+  const photos = await Photo.find({ user: req.usuario.id })
+    .lean()
+    .sort({ date: "desc" });
 
-const AdminImages = async( req,res ) => {
-   const photos = await Photo.find().lean();
-   res.render('image_admin',{photos})
-}
+  res.render("image_admin", { photos });
+};
 
 module.exports = {
-    GeneralImages,
-    AdminImages
-}
+  GeneralImages,
+  AdminImages,
+};

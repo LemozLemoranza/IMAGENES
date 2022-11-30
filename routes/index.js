@@ -1,12 +1,9 @@
-const { Router } = require('express')
-const { GeneralImages, AdminImages } = require('../controllers')
-const router = Router()
+const { Router } = require("express");
+const { GeneralImages, AdminImages } = require("../controllers");
+const { validarJWT } = require("../helpers/jwt-validator");
+const router = Router();
 
-router.get('/', GeneralImages )
-router.get('/gallery', AdminImages)
+router.get("/", validarJWT, GeneralImages);
+router.get("/gallery", validarJWT, AdminImages);
 
-
-
-
-
-module.exports = router
+module.exports = router;
