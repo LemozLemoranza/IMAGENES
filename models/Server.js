@@ -78,6 +78,8 @@ class Server {
     this.app.use(this.paths.index, require("../routes/index"));
     this.app.use(this.paths.images, require("../routes/images"));
     this.app.use(this.paths.users, require("../routes/users"));
+    this.app.use('*', require('../routes/404'))
+
 
     // this.app.use(this.paths.users, require('../routes/users'))
   }
